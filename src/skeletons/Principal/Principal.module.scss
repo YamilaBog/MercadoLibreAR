@@ -1,0 +1,11 @@
+.container {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.root {
+  background-color: var(--gray-200);
+}
