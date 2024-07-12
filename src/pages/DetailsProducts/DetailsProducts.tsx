@@ -43,7 +43,6 @@ const DetailsProducts: React.FC = () => {
     }
   };
 
-  // Función para manejar la búsqueda de productos relacionados
   const handleSearch = async (query: string) => {
     setLoadingProduct(true);
     try {
@@ -54,9 +53,8 @@ const DetailsProducts: React.FC = () => {
         throw new Error("Failed to fetch search results");
       }
       const data = await response.json();
-      setSearchResults(data.results.slice(0, 4)); // Limitar a los primeros 4 resultados
+      setSearchResults(data.results.slice(0, 4)); 
 
-      // Limpiar detalles del producto al realizar la búsqueda
       setProduct(null);
     } catch (error) {
       console.error("Error fetching search results:", error);
@@ -65,7 +63,6 @@ const DetailsProducts: React.FC = () => {
     }
   };
 
-  // Efecto para cargar los detalles del producto cuando el ID cambia
   useEffect(() => {
     if (id) {
       fetchProductDetails(id);
